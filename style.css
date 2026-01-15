@@ -1,0 +1,1072 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    /* list-style: none; */
+    scroll-behavior: smooth;
+    
+}
+
+
+:root{
+    --maincolor:#0B0B10;
+    --navbarcolor:#151520;   
+    --maintext:#EDEDED;
+    --buttoncolor:#D83F87;
+    --hovereffect:#3BC9DB;
+    --boxcolor:#1C1C27;
+    --highlight-color: #4C8C8A;
+    
+}
+ body{
+   color: var(--maintext);
+   background-color: var(--maincolor);
+   margin: 0;
+   padding: 0;
+   overflow-x: hidden;
+} 
+
+
+header{
+    /* margin: 20px; */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* z-index: 0; */
+    background-color: var(--navbarcolor);
+    z-index: 10;
+    gap: 16px;
+    padding: 10px 16px;
+    background-color: var(--navbarcolor);
+    padding-right: 16px;
+    box-sizing: border-box;
+    /* color: var(--maintext); */
+    list-style: none;
+
+}
+
+.riotName{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    background-color: var(--navbarcolor);
+    padding: 0 28px;
+    height: 100%;
+    border-right: 1px solid var(--navbarcolor);
+    position: relative;
+
+}
+
+.riotName img{
+    width: 44px;
+    height: 44px;
+
+}
+.riottext{
+    display: flex;
+    flex-direction: column;
+}
+.Riot{
+    font-size: 30px;
+    letter-spacing: 6px;
+    color: var(--maintext);
+    
+}
+.Valorant  {
+    margin-left: 50px;
+    font-size: 12px;
+    letter-spacing: 6px;
+    color: var(--maintext);
+}
+.nav-bar ul{
+    color: var(--maintext);
+    padding: 6px 2px;
+    position: relative;
+    display: flex;
+    /* gap: 100px; */
+    font-size: 16px;
+    gap: clamp(1rem, 6vw, 3rem);
+    list-style: none;
+}
+.nav-bar a{
+    color: var(--maintext);
+    font-weight: 600;
+    letter-spacing: 3px;
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    padding: .75rem 1.25rem;
+}
+.nav-bar a:not(.btn)::before{
+   content: "";
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 0;
+   height: 0;
+   border-radius: 999px;
+   filter: blur(8px);
+   transition:2s;
+   z-index: -1;
+   background-color: var(--buttoncolor);
+   transform: translate(-50%, -50%);
+   opacity: 0;
+   transition: width .25s ease, height .25s ease, opacity .2s ease;
+   z-index: -1;
+   pointer-events: none;
+
+}
+.nav-bar a:hover::before,
+.nav-bar a:focus-visible::before{
+    width: calc(100% + 15px);
+    height: calc(100% + 10px);
+    opacity: 0.4;
+    
+    
+}
+.btn{
+    background-color: var(--buttoncolor);
+    padding: 3px 4px;
+    border-radius: 30px;
+
+}
+
+/* @media(max-width:992px){
+    .nav-bar{
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    .nav-bar a{
+        letter-spacing: 2px;
+        padding: 0.6rem 1rem;
+        font-size: 0.95rem;
+    }
+    .nav-bar a::before{
+        filter: blur(6px);
+    }
+
+} */
+.firstpage{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    
+}
+.firstpage .clovefirstpage img{
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    
+    
+    
+}
+.firstpage .firstpageHeader{
+    z-index: 1;
+    top: 18%;
+    left: 25%;
+    text-align: center;
+    padding: 0;
+    color: var(--maintext);
+    position: absolute;
+  
+}
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.7;
+    text-shadow: 0 0 20px var(--buttoncolor), 0 0 40px var(--buttoncolor);
+  }
+  50% {
+    opacity: 2;
+    text-shadow: 0 0 40px var(--buttoncohlor), 0 0 80px var(--buttoncolor);
+  }
+}
+.firstpage .valo{
+    font-size:50px;
+    text-shadow: 0 0 20px var(--buttoncolor),0 0 40px var(--buttoncolor),0 0 60px var(--buttoncolor);
+    animation: glowPulse 2s ease-in-out infinite;
+    
+}
+.firstpage .undervalo{
+    font-size: 30px;
+     text-shadow: 0 0 20px var(--buttoncolor),0 0 40px var(--buttoncolor),0 0 60px var(--buttoncolor);
+    animation: glowPulse 2s ease-in-out infinite;
+
+}
+/* secondpage */
+.secondpage{
+    max-width: 100vw;
+    margin: 40px auto;
+    padding: 10px 220px;
+    
+}
+.secondpage .heading{
+    width: fit-content;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--maintext);
+    margin: 0 0 18px;
+    font-size: 30px;
+    font-weight: 500;
+    font-family:"Merriweather",serif ;
+    
+    
+}
+.controller,  .Initiators , .Sentinels{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 28px 0;
+    justify-content: center;
+    align-items: stretch;
+    
+
+}
+.duelist{
+    grid-template-columns: repeat(4,1fr);
+    display: grid;
+    gap: 1.5rem;
+    justify-items: center;
+    margin-bottom: 40px;
+    
+}
+.Sentinels{
+    grid-template-columns: repeat(4,1fr);
+    display: grid;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.controller h3,
+.Initiators h3,
+.Sentinels h3{
+  flex: 0 0 100%;             
+  text-align: center;
+  color: var(--hovereffect);
+  font: 700 26px "Merriweather", serif;
+  margin: 16px 0 0;
+  padding-top: 8px;
+  
+}
+.Duelist h3{
+  grid-column: 1 / -1;               
+  text-align: center;
+  color: var(--hovereffect);
+  font-size: 26px;
+  font-weight: 700;
+  /* border-top: 2px solid var(--hovereffect); */
+  padding-top: 10px;
+  margin-top: 20px;
+}
+.Sentinels h3{
+  grid-column: 1 / -1;               
+  text-align: center;
+  color: var(--hovereffect);
+  font-size: 26px;
+  font-weight: 700;
+  /* border-top: 2px solid var(--hovereffect); */
+  padding-top: 10px;
+  margin-top: 20px;
+}
+
+
+
+.controller .agentcolumn,
+.duelist .agentcolumn,
+.Initiators .agentcolumn,
+.Sentinels .agentcolumn{
+    padding-bottom: 25px;
+    height: 380px;
+    width: 100%;
+    max-width: 220px;
+    background-color:var(--boxcolor);
+    
+    border-radius: 3%;
+    overflow: hidden;
+    border: 1px  solid var(--hovereffect);
+    
+}
+.agentcolumn{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.imagewrap{
+    margin: 18px;
+    padding: 10px;
+    border: 1px  solid var(--hovereffect);
+    border-radius: 10px;
+    margin-bottom: 0;
+    position: relative;
+    
+    
+}
+/* .agentgrid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+} */
+
+
+
+.imagewrap img  {
+    
+    width: 100%;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4/5;
+    border-radius: 8px 8px 0 0;
+    filter: brightness(0.8);
+    transition: 0.5s;
+     
+}
+.imagewrap img:hover{
+    transform: translateY(-5px);
+    filter: brightness(1);
+}
+.namebar{
+    /* background: var(--maintext); */
+    color: var(--maintext);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+}
+/* SECOND PAGE END */
+
+
+/* thirdpage */
+.thirdpage{
+   display: flex;
+   width: 100vw;
+   flex-direction: column;
+   gap: 2rem;
+   align-items: center;
+   padding: 2rem 0;
+   
+}
+
+.rankbox, .TDM{
+    gap: 1.5rem ;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.box1 ,.box2{
+    position: relative;
+    font-size: 20px;
+    width:90%;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border-radius: 3%; */
+    overflow: hidden;
+    background-color:var(--maincolor);
+    border-color: var(--buttoncolor);
+    padding: 40px;
+    gap: 40px;
+    
+    
+
+}
+.box1, .box2 { 
+    padding-top: 0;
+    overflow: visible;
+    position: relative;
+ }
+.box1 h3 , .box2 h3{
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    color:var(--hovereffect);
+    padding: 0px;
+    font-size: 40px;
+    z-index: 10;
+   
+}
+@keyframes headingGlow {
+  0%, 100% {
+    text-shadow: 0 0 15px var(--boxcolor), 0 0 30px var(--buttoncolor);
+  }
+  50% {
+    text-shadow: 0 0 30px var(--hovereffect), 0 0 60px var(--hovereffect);
+  }
+}
+.mapsheading {
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--maintext);
+    letter-spacing: 2px;
+    margin: 2rem 40px 1rem;
+    /* width: 100%; */
+    gap: 2rem;
+    line-height:1.2;
+    text-transform: uppercase;
+    animation: headingGlow 3s infinite alternate;
+}
+.box1 img, .box2 img{
+    position: absolute;
+    width: 700px;
+    height: 450px;
+    object-fit: cover;
+    right:40px;
+    top: 2rem;
+    margin-left: 40px;
+}
+
+
+
+.maptext{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 100px;
+    max-width: 35%;
+    word-wrap: break-word;
+    z-index: 1;
+    
+    
+}
+
+/* THIRD PAGE END */
+/* ABOUT US */
+
+
+.about{
+    max-width: 1100px;
+    width:90%;
+    height: auto;
+    margin:  60px auto;
+    padding: clamp(24px, 4vw, 80px) clamp(20px, 6vw, 120px);
+    border-radius: 24px;
+    background-color:  #4C8C8A;
+}
+
+.about h1{
+    text-align: center;
+    margin: 0 0 16px;
+    font-weight: 800;
+    letter-spacing: .15em;            
+    font-size: clamp(28px, 4.5vw, 48px);
+    line-height: 1.1;
+    white-space: nowrap; 
+}
+
+.aboutustext{
+    padding: 16px 24px;
+    line-height: 1.8;
+}
+
+.aboutustext p{
+    text-indent: 0; 
+}
+
+.aboutustext li{
+    list-style-position: inside;
+    padding-left: 0px;
+    margin-top: 1rem;
+}
+
+.aboutustext h3{
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.about .see-more-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 0;   
+  width: fit-content;
+  padding: 10px 24px;
+  border-radius: 10px;
+  border:2px solid var(--hovereffect);
+  color: var(--hovereffect);
+  background: transparent;
+  transition: 0.3s ease;
+}
+
+.about .see-more-btn:hover{
+  color: var(--hovereffect);
+  border-color: var(--hovereffect);
+  box-shadow: 0 0 8px var(--hovereffect);
+  transform: translateY(-2px);
+}
+
+#see-more-toggle{
+    display: none;
+
+}
+
+.moretext{
+    display: none;
+}
+
+#see-more-toggle:checked ~ .moretext{
+    display: block;
+}
+
+.more-wrap{
+    flex: 0 0 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.see-more-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem auto 0;
+    background: transparent;
+    color: var(--hovereffect);
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    border:2px solid var(--hovereffect);
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease, color .15s ease, border-color .15s ease;
+}
+
+
+.more-wrap input  {
+    display: none;
+
+}
+.more-maps{
+    display: none;
+    width: 100%;
+
+}
+.more-maps{
+    display: none;
+    width: 100%;
+
+}
+.more-wrap input:checked~ .more-maps{
+    display: block;
+}
+
+.rankbox .box1, .box2,
+.more-maps .box1{
+  width: 90%;
+  height: 500px;         
+  margin: 0 auto;
+}
+
+
+.rankbox .box1 img,
+ .TDM .box2 img, 
+.more-maps .box1 img{
+  position: absolute;
+  right: 40px;
+  top: 2rem;
+  width: 700px;
+  height: 450px;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+#see-more-tdm ~ .more-maps {
+  display: none;
+}
+#see-more-tdm:checked ~ .more-maps {
+  display: block;
+}
+#see-more-tdm {
+  display: none;
+}
+.secondpage, .thirdpage, .about, .footer {
+  scroll-margin-top: 80px;
+}
+
+/* footer */
+.footer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+.footer ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+.footer li{
+    border-bottom: 2px auto solid var(--hovereffect);
+    padding-bottom: 4px;
+    
+}
+
+.footer i{
+    margin-left: 10px;
+    margin-right: 8px;
+    vertical-align: middle;
+    transition: transform 0.3s ease,color 0.3s ease, text-shadow 0.3s ease;
+    vertical-align: middle;
+}
+
+.footer i:hover{
+    color: var(--buttoncolor);
+    transform: scale(1.2);
+    text-shadow: 0 0 8px var(--hovereffect), 0 0 16px var(--buttoncolor);
+    cursor: pointer;
+}
+.support-link {
+  color: var(--maintext);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.support-link:hover {
+  color: var(--hovereffect);
+  text-shadow: 0 0 6px var(--hovereffect);
+}
+/* scroll bar */
+html::-webkit-scrollbar{
+    width: 10px;
+}
+
+html::-webkit-scrollbar-track{
+    background: var(--maincolor);
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--hovereffect);
+    border-radius: 10px;
+}
+html::-webkit-scrollbar-thumb:hover{
+    background: var(--buttoncolor);
+}
+/* scroll bar end */
+
+/* responsive */
+@media (min-width:1024px) and (max-width: 1440px){
+    body,html{
+        overflow-x: hidden;
+    }
+    .secondpage{
+        padding: 10px 100px;
+        max-width: 1200px;
+        margin-inline: auto;
+    }
+    .nav-bar ul{
+        gap: clamp(0.75rem, 3vw, 2rem);
+    }
+    .nav-bar a{
+        font-size: 14px;
+        letter-spacing: 2px;
+        padding: 0.6rem 1rem;
+    }
+    .firstpage .valo{
+        font-size: 14px;
+        padding-top: 20px;
+        
+    }
+    .firstpage .firstpageHeader{
+        left: 15%;
+    }
+    .firstpage .undervalo{
+        font-size: 24px;
+    }
+    .controller, .Initiators, .Sentinels{
+        gap: 1.5rem;
+    }
+    .agentcolumn{
+        max-width: 200px;
+        height: 340px;
+    }
+    .agentcolumn .heading{
+        font-size: 26px;
+    }
+    .mapsheading{
+        font-size: 1.8rem;
+        line-height: 1.3;
+        margin: 1.5rem 20px 1rem;
+        padding-bottom: -200px;
+    }
+    .box1, .box2{
+        width: 90%;
+        height: 420px;
+        padding: 30px;
+        gap: 20px;
+    }
+    .rankbox .box1 img,
+    .TDM .box2 img,
+    .more-maps .box1 img{
+        width: 380px;
+        height: 270px;
+        right: 30px;
+        margin-top: 80px;
+        /* padding-bottom: 3rem; */
+    }
+    .maptext{
+        max-width: 48%;
+        padding-top: 30px;
+        font-size: 16px;
+        gap: 0.5rem;
+    }
+    .box1  h3{
+       top: 130px;
+       font-size: 30px;
+    }
+    .box2  h3{
+        top: 100px;
+        font-size: 20px;
+    }
+    
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+    body,html{
+        overflow-x: hidden;
+        
+    }
+    header 
+    {
+    gap: 12px;
+    padding: 8px 14px;
+    }
+    .riotName{
+        padding: 0 20px;
+
+    }
+    .riotName img{
+        width: 40px;
+        height: 40px;
+    }
+    .riottext{
+        gap: 2px;
+    }
+    .Riot{
+        font-size: 24px;
+        letter-spacing: 5px;
+
+    }
+    .Valorant{
+        font-size: 10px;
+        letter-spacing: 5px;
+        margin-left: 30px;
+    }
+    .firstpage .firstpageHeader{
+        left: 16%;
+        top: 16%;
+        margin-top: 20px;
+        
+    }
+    .firstpage .valo{
+        font-size: 26px;
+
+    }
+    .firstpage .undervalo{
+        font-size: 18px;
+    }
+    .nav-bar ul{
+        gap: clamp(0.5rem, 2.5vw, 1.25rem);
+    }
+    .nav-bar a{
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        padding: 0.55rem 0.85rem;
+    }
+    .secondpage{
+        padding: 10px 80px;
+        max-width: 980px;
+        margin-inline: auto;
+    }
+    .secondpage .heading{
+        font-size: 20px;
+    }
+    .controller, .Initiators {
+        gap: 1.25rem;
+        justify-content: center;
+        align-items: stretch;
+        padding: 20px 0;
+       
+    }
+    .Duelist , .Sentinels{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 1.25rem;
+        justify-items: center;
+        margin-bottom: 32px;
+    }
+    .controller h3,
+    .Initiators h3,
+    .Sentinels h3,
+    .Duelist h3 {
+        font-size: 22px;
+        margin: 12px 0 0;
+        padding-top: 6px;
+    }
+    .agentcolumn {
+        max-width: 200px;
+        height: 340px;
+    }
+    .imagewrap {
+        margin: 14px;
+        padding: 8px;
+    }
+    .mapsheading {
+        font-size: 20px;
+        /* line-height: 1; */
+        margin: 1.5rem 20px 1rem;
+    }
+    
+    .rankbox .box1 img, .TDM .box2 img, .more-maps .box1 img{
+        position: absolute;
+        width: 320px;
+        height: 260px;
+        right: 24px;
+        top: 2.5rem;
+        object-fit: cover;
+        pointer-events: none;
+        z-index: 0;
+    }
+    .maptext{
+        max-width:38%;
+        padding-bottom: 200px;
+        font-size: 15px;
+        gap: 0.75rem;
+        font-size: 15px;
+    }
+    .box1 h3, .box2 h3 {
+        top: 30px;
+        left: 30px;
+        font-size: 23px;
+    }
+    .rankbox, .TDM {
+        width: 92%;
+        gap: 1.25rem;
+    }
+    .box1, .box2 {
+        width: 92%;
+        height: 420px;       
+        padding: 24px;
+        gap: 10px;
+        overflow: visible;
+        position: relative;
+  
+    }
+    .about{
+        width: 92%;
+        margin: 40px auto;
+        padding: 48px 80px;
+        font-size: 18px;
+        border-radius: 1.5rem;
+    }
+    .about h1{
+        font-size: 30px;
+    }
+    .aboutustext{
+        line-height: 1.8;
+        padding: 16px 28px;
+    }
+    .aboutustext li{
+        margin-top: 1.1rem;
+    }
+    .footer{
+        font-size: 18px;
+        padding-bottom: 18px;
+    }
+    .footer ul{
+        gap: 2rem;
+    }
+}
+@media (min-width: 320px) and (max-width: 425px){
+    html, body{
+        overflow-x: hidden;
+    }
+    header{
+        padding: 5px 7px;
+        gap: 3px;
+    }
+    .riotName{
+        padding: 0 9px;
+        
+    }
+    .riotName img{
+        width:10px;
+        height: 10px;
+    }
+    .Riot{
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+    .Valorant{
+        font-size: 9px;
+        letter-spacing: 0.5px;
+        margin-left: 28px;
+        display: none;
+    }
+    .nav-bar ul{
+        gap: 0.1rem;
+    }
+    .nav-bar a{
+        font-size: 3px;
+        letter-spacing: 0.2px;
+        padding: 0.4rem 0.6rem;
+    }
+    .firstpage .firstpageHeader{
+        top: 20%;
+        left: 11%;
+        font-size: 12px;
+    }
+    .firstpage .valo{
+        font-size: 11px;
+    }
+    .firstpage .undervalo{
+        font-size: 10px;
+    }
+    .secondpage{
+        padding: 8px 14px;
+        max-width: 100%;
+        
+    }
+     .secondpage .heading{
+        font-size: 15px;
+    }
+    .controller, 
+    .Initiators, 
+    .Sentinels,  
+    .Duelist{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    justify-items: center;
+    margin-bottom: 0 0 20px;
+}
+     .controller h3, 
+     .Initiators h3, 
+     .Sentinels h3, 
+     .Duelist h3 {
+        grid-column: 1 / -1;
+        justify-self: center;
+        font-size: 18px;
+        margin: 0 0 8px 0;
+    }
+    .agentcolumn { 
+        max-width: 160px; height: 290px; 
+    }
+
+    
+    .controller .agentcolumn,
+    .Initiators .agentcolumn,
+    .Sentinels .agentcolumn,
+    .duelist .agentcolumn, 
+    .Duelist .agentcolumn{
+        max-width: 160px;
+        width: 100%;
+        height: auto;
+    }
+    
+    .imagewrap {
+        margin: 10px;
+        padding: 6px;
+        height: auto;
+    }
+
+    .imagewrap img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        aspect-ratio: auto;
+        border-radius: 8px;
+        transform: none;
+    }
+
+    .mapsheading{
+        font-size: 22px;
+        line-height: 1.2;
+        margin: 1rem 0 .5rem;
+    }
+
+    .rankbox, .TDM { 
+        width: 100%; 
+        gap:.75rem;
+    }
+
+    .box1, .box2 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        height: auto;
+        padding: 16px;
+    }
+
+    .box1 h3, .box2 h3{
+        order: 1;
+        position: static;         
+        margin: 0 auto;
+        font-size: 20px;
+    }
+    
+    .rankbox .box1 img,
+    .TDM .box2 img,
+    .more-maps .box1 img {
+        order: 2;
+        position: static !important;
+        width: 100%;
+        height: auto;
+        margin: 8px 0 0;
+        inset: 0;
+        right: auto;
+        top: auto;
+        object-fit: cover;
+    }
+
+    .box1 .maptext,
+    .box2 .maptext{
+        order: 3;
+        position: static;
+        max-width: 100%;
+        padding: 0;              
+        margin: 4px 0 0;
+        gap: .4rem;
+        font-size: 14px;
+        line-height: 1.35;
+        list-style: disc inside;  
+        white-space: normal;     
+    }
+
+    .about{
+        width: 92%;
+        padding: 28px 20px;
+        border-radius: 20px;
+        }
+  .about h1{
+        white-space: normal;           
+        letter-spacing: .08em;
+        font-size: 26px;
+        margin-bottom: 12px;
+    }
+  .aboutustext{
+        padding: 12px 8px;
+        line-height: 1.6;
+    }
+    .footer{
+        font-size: 10px;
+    }
+}
