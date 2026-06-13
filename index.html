@@ -1,14 +1,28 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valorant</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-    </style>
+    <meta name="description" content="Explore Valorant agents, maps, and tactical gameplay.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script type="module" src="https://cdn.jsdelivr.net/npm/@fortawesome/webawesome@1.4.0/dist/webawesome.esm.js">
+    </script>
+    <script defer>
+        document.addEventListener("click", (event) => {
+            const summary = event.target.closest("summary");
+            const details = summary?.parentElement;
+
+            if (!summary || !details?.open) return;
+
+            requestAnimationFrame(() => {
+                summary.scrollIntoView({ behavior: "smooth", block: "center" });
+            });
+        });
     </script>
 </head>
 <body>
@@ -27,10 +41,10 @@
                 </span>
             </div>
         </div>
-        <div class="nav-bar">
+        <nav class="nav-bar" aria-label="Primary navigation">
            <ul>
                 <li>
-                    <a href="#">Home</a>
+                    <a href="#home">Home</a>
                 </li>
                 <li>
                     <a href="#agents">Agent</a>
@@ -45,225 +59,286 @@
                     <a href="#contact">Contact</a>
                 </li>
                 <li>
-                    <a href="" class="btn">Sign In</a>
+                    <a href="#agents" class="btn">Explore</a>
                 </li>
             </ul> 
             
-        </div>
+        </nav>
     </header>
     <!-- heading close -->
 
     <!-- first page -->
 
-    <div class="firstpage">
+    <main>
+    <section class="firstpage" id="home">
         <span class="clovefirstpage">
-            <img src="./image/clovefirstpage.jpeg" alt="">
+            <img src="./image/clovefirstpage.jpeg" alt="Valorant agent Clove">
 
         </span>
         <div class="firstpageHeader">
-            <h4 class="valo">
-                VALORANT
-            </h4>
-            
-            <h6 class="undervalo">VALORANT — A 5v5 tactical shooter with unique Agents and skills.
-
-            </h6>
-
+            <p class="eyebrow">Defy the limits</p>
+            <h1 class="valo">VALORANT</h1>
+            <p class="undervalo">A 5v5 tactical shooter with unique agents, precise gunplay, and high-stakes strategy.</p>
+            <a class="hero-btn" href="#agents">Meet the agents <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
         </div>
 
-    </div>
+    </section>
     <!-- second page -->
-     <div class="secondpage" id="agents">
-        <h3 class="heading">
-                Valorant Agents, Abalities & Storylines
-        </h3>
-        
+     <section class="secondpage" id="agents">
+        <div class="agent-heading">
+            <p class="section-kicker">Choose your role</p>
+            <h2 class="heading">Valorant Agents</h2>
+            <p class="section-copy">Build a balanced squad from four distinct roles. Each agent brings a different way to create space, gather information, or lock down the battlefield.</p>
+        </div>
+
         <div class="agentgrid">
             <!-- controller start -->
-                <div class="controller"> 
-                    <h3>
-                        Controllers
-                    </h3>
+                <section class="agent-role controller" id="controllers">
+                    <div class="role-heading">
+                        <p class="role-number">01</p>
+                        <div>
+                            <h3>Controllers</h3>
+                            <p>Cut sightlines, control space, and shape the battlefield for your team.</p>
+                        </div>
+                    </div>
                 
                     <div class="agentcolumn">
                         <span class="namebar">Omen</span>
                         <div class="imagewrap">
-                            <img src="./image/_Omen _ One with the Darkness_.jpg" alt="">
+                            <img src="./image/_Omen _ One with the Darkness_.jpg" alt="Omen" loading="lazy">
                         </div>
 
                     </div>
                     <div class="agentcolumn">
                         <span class="namebar">Astra</span>
                         <div class="imagewrap">
-                            <img src="./image/Astra Valorant.jpg" alt="">
+                            <img src="./image/Astra Valorant.jpg" alt="Astra" loading="lazy">
                         </div>
 
                     </div>
                     <div class="agentcolumn">
                         <span class="namebar">Clove</span>
                         <div class="imagewrap">
-                            <img src="./image/download (6).jpg" alt="">
+                            <img src="./image/download (6).jpg" alt="Clove" loading="lazy">
                         </div>
 
                     </div>
+                    <details class="role-more">
+                    <summary class="see-more-btn">
+                        <span class="toggle-label show-label">See more Controllers</span>
+                        <span class="toggle-label hide-label">Show fewer Controllers</span>
+                        <span class="toggle-count">3</span>
+                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="role-extra">
                     <div class="agentcolumn">
                         <span class="namebar">Brimstone</span>
                         <div class="imagewrap">
-                            <img src="./image/brimstone valorant wallpaper.jpg" alt="">
+                            <img src="./image/brimstone valorant wallpaper.jpg" alt="Brimstone" loading="lazy">
                         </div>
 
                     </div>
                     <div class="agentcolumn">
                         <span class="namebar">Viper</span>
                         <div class="imagewrap">
-                            <img src="./image/VIPER.jpg" alt="">
+                            <img src="./image/VIPER.jpg" alt="Viper" loading="lazy">
                         </div>
 
                     </div>
                     <div class="agentcolumn">
                         <span class="namebar">Harbor</span>
                         <div class="imagewrap">
-                            <img src="./image/download (7).jpg" alt="">
+                            <img src="./image/download (7).jpg" alt="Harbor" loading="lazy">
                         </div>
 
                     </div>
-                </div>
+                    </div>
+                    </details>
+                </section>
        
             <!-- controller end -->
 
             <!-- duelist start -->
             
-            <div class="Duelist"> 
-                <h3>
-                    Duelists
-                </h3>
+            <section class="agent-role duelist" id="duelists">
+                <div class="role-heading">
+                    <p class="role-number">02</p>
+                    <div>
+                        <h3>Duelists</h3>
+                        <p>Take first contact, create openings, and turn confidence into eliminations.</p>
+                    </div>
+                </div>
                 <div class="agentcolumn">
                     <span class="namebar">Reyna</span>
                     <div class="imagewrap">
-                        <img src="./image/download (5).jpg" alt="">
+                        <img src="./image/download (5).jpg" alt="Reyna" loading="lazy">
                     </div>
 
                 </div>
                 <div class="agentcolumn">
                     <span class="namebar">Jett</span>
                     <div class="imagewrap">
-                        <img src="./image/Battlepass Episode 5 Act 1 , xiang zhang.jpg" alt="">
+                        <img src="./image/Battlepass Episode 5 Act 1 , xiang zhang.jpg" alt="Jett" loading="lazy">
                     </div>
 
                 </div>
                 <div class="agentcolumn">
                     <span class="namebar">Yoru</span>
                     <div class="imagewrap">
-                        <img src="./image/Yoru.jpg">
+                        <img src="./image/Yoru.jpg" alt="Yoru" loading="lazy">
                     </div>
                 </div>
+                <details class="role-more">
+                <summary class="see-more-btn">
+                    <span class="toggle-label show-label">See more Duelists</span>
+                    <span class="toggle-label hide-label">Show fewer Duelists</span>
+                    <span class="toggle-count">4</span>
+                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </summary>
+                <div class="role-extra">
                 <div class="agentcolumn">
                     <span class="namebar">Raze</span>
                     <div class="imagewrap">
-                        <img src="./image/VALORENT AGENT _ RAZE.jpg">
+                        <img src="./image/VALORENT AGENT _ RAZE.jpg" alt="Raze" loading="lazy">
                     </div>
                 </div>
                 <div class="agentcolumn">
                     <span class="namebar">Phoenix</span>
                     <div class="imagewrap">
-                        <img src="./image/Phoenix.jpg">
+                        <img src="./image/Phoenix.jpg" alt="Phoenix" loading="lazy">
                     </div>
                 </div>
                 <div class="agentcolumn">
                     <span class="namebar">Neon</span>
                     <div class="imagewrap">
-                        <img src="./image/NEON _ Valorant Wallpaper.jpg">
+                        <img src="./image/NEON _ Valorant Wallpaper.jpg" alt="Neon" loading="lazy">
                     </div>
                 </div>
                 <div class="agentcolumn">
                     <span class="namebar">Iso</span>
                     <div class="imagewrap">
-                        <img src="./image/valorant-game-phone-wallpaper-hd.jpg">
+                        <img src="./image/valorant-game-phone-wallpaper-hd.jpg" alt="Iso" loading="lazy">
                     </div>
                 </div>
-            </div>
+                </div>
+                </details>
+            </section>
 
             <!-- duelist end -->
 
             <!-- initiators start -->
              
-             <div class="Initiators"> 
-                <h3>
-                    Initiators
-                </h3>
+             <section class="agent-role initiators" id="initiators">
+                <div class="role-heading">
+                    <p class="role-number">03</p>
+                    <div>
+                        <h3>Initiators</h3>
+                        <p>Reveal threats and disrupt fortified positions before the team moves in.</p>
+                    </div>
+                </div>
                 <div class="agentcolumn">
                     <span class="namebar">Sova</span>
                     <div class="imagewrap">
-                        <img src="./image/Sova.jpg">
+                        <img src="./image/Sova.jpg" alt="Sova" loading="lazy">
                     </div>
                 </div>
                 <div class="agentcolumn">
                     <span class="namebar">Breach</span>
                     <div class="imagewrap">
-                        <img src="./image/Breach.jpg">
+                        <img src="./image/Breach.jpg" alt="Breach" loading="lazy">
                     </div>
                 </div>
                 <div class="agentcolumn">
                     <span class="namebar">Skye</span>
                     <div class="imagewrap">
-                        <img src="./image/Skye.jpg">
+                        <img src="./image/Skye.jpg" alt="Skye" loading="lazy">
                     </div>
                 </div>
+                <details class="role-more">
+                <summary class="see-more-btn">
+                    <span class="toggle-label show-label">See more Initiators</span>
+                    <span class="toggle-label hide-label">Show fewer Initiators</span>
+                    <span class="toggle-count">3</span>
+                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </summary>
+                <div class="role-extra">
                 <div class="agentcolumn">
                     <span class="namebar">Kayo</span>
                     <div class="imagewrap">
-                        <img src="./image/Kay_0 Valorant.jpg">
+                        <img src="./image/Kay_0 Valorant.jpg" alt="KAY/O" loading="lazy">
                     </div>
                 </div>
                 <div class="agentcolumn">
                     <span class="namebar">Fade</span>
                     <div class="imagewrap">
-                        <img src="./image/6403732c-a04c-4276-b92b-74f7ac51a3ca.jpg">
+                        <img src="./image/6403732c-a04c-4276-b92b-74f7ac51a3ca.jpg" alt="Fade" loading="lazy">
                     </div>
                 </div>
                 <div class="agentcolumn">
                     <span class="namebar">Gekko</span>
                     <div class="imagewrap">
-                        <img src="./image/Gekko Valorant phone wallpaper.jpg">
+                        <img src="./image/Gekko Valorant phone wallpaper.jpg" alt="Gekko" loading="lazy">
                     </div>
                 </div>
-            </div>
+                </div>
+                </details>
+            </section>
             <!-- initiors end -->
 
             <!-- Sentinels start -->
             
-             <div class="Sentinels"> 
-                <h3>
-                    Sentinels
-                </h3>
-                <div class="agentcolumn">
-                    <span class="namebar">Sage</span>
-                    <div class="imagewrap">
-                        <img src="./image/☦︎.jpg">
+             <section class="agent-role sentinels" id="sentinels">
+                <div class="role-heading">
+                    <p class="role-number">04</p>
+                    <div>
+                        <h3>Sentinels</h3>
+                        <p>Protect territory, watch flanks, and keep the team secure under pressure.</p>
                     </div>
                 </div>
                 <div class="agentcolumn">
-                    <span class="namebar">Killijoy</span>
+                    <span class="namebar">Sage</span>
                     <div class="imagewrap">
-                        <img src="./image/Kiko_L(Jason Liang) (@Kikoldraws) on X.jpg">
+                        <img src="./image/Sage Unstoppable Player Card.jpg" alt="Sage" loading="lazy">
+                    </div>
+                </div>
+                <div class="agentcolumn">
+                    <span class="namebar">Killjoy</span>
+                    <div class="imagewrap">
+                        <img src="./image/Kiko_L(Jason Liang) (@Kikoldraws) on X.jpg" alt="Killjoy" loading="lazy">
                     </div>
                 </div>
                 <div class="agentcolumn">
                     <span class="namebar">Chamber</span>
                     <div class="imagewrap">
-                        <img src="./image/download (8).jpg">
+                        <img src="./image/download (8).jpg" alt="Chamber" loading="lazy">
                     </div>
                 </div>
+                <details class="role-more">
+                <summary class="see-more-btn">
+                    <span class="toggle-label show-label">See more Sentinels</span>
+                    <span class="toggle-label hide-label">Show fewer Sentinels</span>
+                    <span class="toggle-count">2</span>
+                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </summary>
+                <div class="role-extra">
                 <div class="agentcolumn">
                     <span class="namebar">Deadlock</span>
                     <div class="imagewrap">
-                        <img src="./image/Deadlock.jpg">
+                        <img src="./image/Deadlock.jpg" alt="Deadlock" loading="lazy">
                     </div>
                 </div>
-            </div>
+                <div class="agentcolumn">
+                    <span class="namebar">Cypher</span>
+                    <div class="imagewrap">
+                        <img src="./image/Cypher _ Valorant _ Wallpaper.jpg" alt="Cypher" loading="lazy">
+                    </div>
+                </div>
+                </div>
+                </details>
+            </section>
             <!-- sentinal end -->
         </div>
-     </div>
+     </section>
      <!-- third page -->
      <section class="thirdpage" id="maps">
         <div class="rankbox">
@@ -308,10 +383,13 @@
     <img src="./mapimage/pearl.jpg" alt="">
   </div>
 
-  <div class="more-wrap">
-    <input type="checkbox" id="see-more-rank1">
-    <label for="see-more-rank1" class="see-more-btn">See more maps...</label>
-
+  <details class="more-wrap">
+    <summary class="see-more-btn">
+      <span class="toggle-label show-label">Explore more maps</span>
+      <span class="toggle-label hide-label">Show fewer maps</span>
+      <span class="toggle-count">8</span>
+      <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+    </summary>
     <div class="more-maps">
       <div class="box1">
         <h3>Ascent</h3>
@@ -406,7 +484,7 @@
         <img src="./mapimage/corrode.jpg" alt="">
       </div>
     </div>
-  </div>
+  </details>
 </div>
 
 
@@ -442,10 +520,13 @@
                 </ul>
                 <img src="./mapimage/kasbah.png" alt="">
             </div>
-            <div class="more-wrap">
-            <input type="checkbox" id="see-more-tdm">
-            <label for="see-more-tdm" class="see-more-btn">See more...</label>
-
+            <details class="more-wrap">
+            <summary class="see-more-btn">
+                <span class="toggle-label show-label">Explore more training maps</span>
+                <span class="toggle-label hide-label">Show fewer training maps</span>
+                <span class="toggle-count">3</span>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </summary>
             <div class="more-maps">
                     <div class="box2">
                         <h3>
@@ -487,7 +568,7 @@
                         <img src="./mapimage/Range_Shooting_Range.webp" alt="">
                     </div>
                 </div>
-            </div>
+            </details>
         </div>
 
      </section>
@@ -512,8 +593,12 @@
                 <li>Fostering a thriving ecosystem: The company strives to create a fair, safe, and welcoming environment for all players.</li>
                 <li>Supporting players globally: Riot invests in initiatives that benefit players around the world, regardless of their country or culture. </li>
             </ul>
-            <input type="checkbox" id="see-more-toggle">
-            <label for="see-more-toggle" class="see-more-btn">See More....</label>
+            <details class="about-more">
+            <summary class="see-more-btn">
+                <span class="toggle-label show-label">Read more about Valorant</span>
+                <span class="toggle-label hide-label">Show less</span>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </summary>
             <div class="moretext">
                 <h3>
                     About the game, Valorant
@@ -526,6 +611,7 @@
                     <li>Platforms: The game is available on PC and is also coming to Xbox Series X|S and PlayStation 5. </li>
                 </ul>
             </div>
+            </details>
         </div>
     </section>
        <!-- ABOUT US END -->
@@ -540,17 +626,17 @@
             <li>
                 Social Platforms
                 <i class="fa-brands fa-facebook"></i>Facebook
-                <i class="fa-brands fa-instagram"></i>Instragram
+                <i class="fa-brands fa-instagram"></i>Instagram
                 <i class="fa-brands fa-twitter"></i>Twitter
             </li>
             <li>
                 <a href="https://support-valorant.riotgames.com/" target="_blank" class="support-link">
-                 </i>
                 Need help? Contact Valorant Support
                 </a>
             </li>
         </ul>
     </div>
+    </main>
     
 </body>
 </html>
